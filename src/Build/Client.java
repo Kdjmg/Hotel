@@ -5,6 +5,24 @@ public class Client {
     private String name;
     private String firstName;
     private String number;
+    private static int nbClient = 0;
+
+    public Client(String name, String firstName, String number) {
+        this.id = nbClient++;
+        this.name = name;
+        this.firstName = firstName;
+        this.number = number;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", number='" + number + '\'' +
+                '}';
+    }
 
     public int getId() {
         return id;

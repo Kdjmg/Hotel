@@ -7,6 +7,12 @@ public class Chambre {
     private int numberBed;
     private double price;
 
+    public Chambre(int number, int numberBed, double price) {
+        this.number = number;
+        this.numberBed = numberBed;
+        this.price = price;
+        this.statut = true;
+    }
     public int getNumber() {
         return number;
     }
@@ -37,5 +43,15 @@ public class Chambre {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Chambre{" +
+                "number=" + number +
+                ", statut=" + statut +
+                ", numberBed=" + numberBed +
+                ", price=" + price +
+                '}';
     }
 }
