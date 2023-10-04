@@ -1,23 +1,24 @@
 package Build;
 
 import java.util.ArrayList;
-import java.util.Random;
-
-
 
 public class Reservation {
+
     private int id;
+
     private boolean statut;
-   private ArrayList<Chambre> listeDeChambres;
-   private String client;
 
-   private static int nbReservation;
+    private ArrayList<Chambre> listeChambres;
 
-    public Reservation(int id, boolean statut, ArrayList<Chambre> listeDeChambres, String client) {
-        this.id = id;
-        this.statut = statut;
-        this.listeDeChambres = listeDeChambres;
+    private Client client;
+
+    private static int nbReservation;
+
+    public Reservation(ArrayList<Chambre> listeChambres, Client client) {
+        this.listeChambres = listeChambres;
         this.client = client;
+        this.statut = true;
+        this.id = nbReservation++;
     }
 
     public int getId() {
@@ -36,19 +37,19 @@ public class Reservation {
         this.statut = statut;
     }
 
-    public ArrayList<Chambre> getListeDeChambres() {
-        return listeDeChambres;
+    public ArrayList<Chambre> getListeChambres() {
+        return listeChambres;
     }
 
-    public void setListeDeChambres(ArrayList<Chambre> listeDeChambres) {
-        this.listeDeChambres = listeDeChambres;
+    public void setListeChambres(ArrayList<Chambre> listeChambres) {
+        this.listeChambres = listeChambres;
     }
 
-    public String getClient() {
+    public Client getClient() {
         return client;
     }
 
-    public void setClient(String client) {
+    public void setClient(Client client) {
         this.client = client;
     }
 
@@ -62,12 +63,22 @@ public class Reservation {
 
     @Override
     public String toString() {
-        String statutString;
-        statutString= statut ? "reservation en cours" :"reservation annuler ou finis ";
-        String message = id +")" +statutString + "pour le client :\n"
-                +client + "listes des chambres reserver : \n";
-        for (Chambre chambre : listeDeChambres) {
-            message += chambre + "\n";
+            /*
+        String statutString = "";
+        if(statut){
+            statutString = "Reservation en cours";
+        }else {
+            statutString = "Reservation annulée ou fini";
+        }
+
+             */
+        String statutString = statut ? "Reservation en cours" : "Reservation annulée ou fini";
+        String message = id + ")"+
+                statutString +
+                " pour le client : \n" + client +
+                "Liste des chambres reservées : \n";
+        for (Chambre chambre : listeChambres) {
+            message += chambre +"\n";
         }
         return message;
     }

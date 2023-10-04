@@ -1,7 +1,6 @@
-import Build.Ihm;
+import Build.IhmConsole;
 
 public class Main {
     public static void main(String[] args) {
-        Ihm.start();
-    }
+        IhmConsole.start();    }
 }

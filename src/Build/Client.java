@@ -1,27 +1,22 @@
 package Build;
 
 public class Client {
+
     private int id;
-    private String name;
-    private String firstName;
-    private String number;
+
+    private String nom;
+
+    private String prenom;
+
+    private String phone;
+
     private static int nbClient = 0;
 
-    public Client(String name, String firstName, String number) {
+    public Client(String nom, String prenom, String phone) {
         this.id = nbClient++;
-        this.name = name;
-        this.firstName = firstName;
-        this.number = number;
-    }
-
-    @Override
-    public String toString() {
-        return "Client{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", number='" + number + '\'' +
-                '}';
+        this.nom = nom;
+        this.prenom = prenom;
+        this.phone = phone;
     }
 
     public int getId() {
@@ -32,27 +27,38 @@ public class Client {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNom() {
+        return nom;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getPrenom() {
+        return prenom;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
 
-    public String getNumber() {
-        return number;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
+
+    @Override
+    public String toString() {
+        return id + " ) "+
+                "nom = " + nom +
+                ", prenom = " + prenom +
+                ", phone = " + phone +
+                '.';
+    }
+
+    // 0 ) nom = toto, prenom = tata, phone = 01234.
 }

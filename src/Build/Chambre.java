@@ -2,23 +2,27 @@ package Build;
 
 public class Chambre {
 
-    private int number;
-    private boolean statut;
-    private int numberBed;
-    private double price;
+    private int num;
 
-    public Chambre(int number, int numberBed, double price) {
-        this.number = number;
-        this.numberBed = numberBed;
-        this.price = price;
+    private boolean statut;
+
+    private int nbLits;
+
+    private double tarif;
+
+    public Chambre(int num, int nbLits, double tarif) {
+        this.num = num;
+        this.nbLits = nbLits;
+        this.tarif = tarif;
         this.statut = true;
     }
-    public int getNumber() {
-        return number;
+
+    public int getNum() {
+        return num;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setNum(int num) {
+        this.num = num;
     }
 
     public boolean isStatut() {
@@ -29,29 +33,29 @@ public class Chambre {
         this.statut = statut;
     }
 
-    public int getNumberBed() {
-        return numberBed;
+    public int getNbLits() {
+        return nbLits;
     }
 
-    public void setNumberBed(int numberBed) {
-        this.numberBed = numberBed;
+    public void setNbLits(int nbLits) {
+        this.nbLits = nbLits;
     }
 
-    public double getPrice() {
-        return price;
+    public double getTarif() {
+        return tarif;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setTarif(double tarif) {
+        this.tarif = tarif;
     }
 
     @Override
     public String toString() {
-        return "Chambre{" +
-                "number=" + number +
+        return "Chambre : " +
+                "num=" + num +
                 ", statut=" + statut +
-                ", numberBed=" + numberBed +
-                ", price=" + price +
-                '}';
+                ", nbLits=" + nbLits +
+                ", tarif=" + tarif +
+                '.';
     }
 }
